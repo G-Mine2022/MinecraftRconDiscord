@@ -2,19 +2,19 @@ import discord
 from discord.ext import commands
 from discord import utils
 from mcrcon import MCRcon
-server = MCRcon('95.216.62.180', '11EBE8FAAD79635586', port=25573)
+server = MCRcon('server ip', 'rcon password', port=your_port)
 server.connect()
 
 intents = discord.Intents.all()
-TOKEN = "MTAxMDA4MTYyMzk0Mjg4OTQ4Mg.Gtx9jK.6ltCaUDDTIJwByylMhfMW_Ri4_jJ7csfIbGx3k"
+TOKEN = "token" #put your token here
 
-channel = 1009732910343016448
+channel = 00000 #channel id
 bot = commands.Bot(command_prefix=('/'), intents=intents)
 bot.remove_command( 'help' )
 
 @bot.command()
 async def cmd(ctx, cmd):
     if ctx.channel.id == channel:
-        await ctx.send('Server output:\n'+server.command(cmd.replace('_', ' ')))
+        await ctx.send('Server output:\n'+server.command(cmd.replace('_', ' ')))#command usage: /cmd say_123
 
 bot.run(TOKEN)

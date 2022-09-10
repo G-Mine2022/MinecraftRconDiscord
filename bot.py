@@ -15,6 +15,6 @@ bot.remove_command( 'help' )
 @bot.command()
 async def cmd(ctx, cmd):
     if ctx.channel.id == channel:
-        await ctx.send('Server output:\n'+server.command(cmd.replace('_', ' ')))#command usage: /cmd say_123
+        await ctx.send('Server output:\n'+server.command(cmd.replace('-', ' ')))#command usage: /cmd say-123
 
 bot.run(TOKEN)
